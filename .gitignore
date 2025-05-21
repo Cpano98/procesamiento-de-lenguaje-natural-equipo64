@@ -172,3 +172,5 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+# Partial downloads
+cc.en.300.bin.gz.part
