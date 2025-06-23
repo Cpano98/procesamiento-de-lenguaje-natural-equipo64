@@ -1,0 +1,8 @@
+gradio
+langchain
+langchain-community
+chromadb
+python-dotenv
+PyGithub
+pypdf
+langchain-google-genai 

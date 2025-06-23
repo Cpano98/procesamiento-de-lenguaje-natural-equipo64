@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stori Developers Chatbot - Technical Documentation Assistant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+          --font-inter: "Inter", sans-serif;
+        }
+        body, html {
+            padding: 0;
+            margin: 0;
+            font-family: var(--font-inter);
+            background-color: #f6f8fb; /* Light background similar to the image */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        /* Custom colors based on the image analysis and existing CSS */
+        .bg-stori-green { background-color: #00D180; } /* Main CTA green */
+        .text-stori-dark-blue { color: #002C30; } /* Main dark text */
+        .text-stori-gray { color: rgba(0,44,48,0.6); } /* Lighter gray text */
+        .bg-stori-light-gray { background-color: #F4F4F4; } /* Card background */
+        .border-stori-medium-gray { border-color: #CCD8D9; } /* Border color */
+        .text-stori-primary-green-dark { color: #058E65; } /* Darker green for checkmarks/accents */
+
+        /* Styles for the accordion - retained for the RAG sources section */
+        .accordion-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          cursor: pointer;
+          padding-top: 1rem;
+          padding-bottom: 1rem;
+          position: relative;
+        }
+
+        .accordion-content {
+            transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+        }
+
+        .accordion-content.active {
+            max-height: 500px; /* Adjust as needed for content length */
+            opacity: 1;
+            padding-bottom: 1rem;
+        }
+
+        .accordion-header svg {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .accordion-header.active svg {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="bg-[#f6f8fb] font-inter antialiased">
+
+    <header class="flex justify-center w-full shadow-md sticky top-0 z-40 h-[88px] bg-white">
+        <nav class="flex justify-between items-center lg:w-[960px] lg:max-w-[960px] xl:w-[1120px] xl:max-w-[1120px] 2xl:w-[1320px] 2xl:max-w-[1320px] py-[16px] px-[24px] md:px-[12px] lg:px-0 w-full">
+            <div class="w-36 lg:pr-6 lg:flex-none lg:w-auto">
+                <a href="/">
+                    <img alt="stori_card_logo_color" loading="lazy" width="595" height="322" decoding="async" data-nimg="1" class="w-auto h-[64px]" src="https://www.storicard.com/_next/static/media/storis_savvi_color.7e286ddd.svg" style="color: transparent;">
+                </a>
+            </div>
+
+            <div class="hidden md:flex items-center space-x-6 text-sm">
+        
+            </div>
+
+            <div class="flex items-center space-x-4">
+                <button class="hidden md:block py-2 px-4 rounded-full bg-stori-green text-white font-semibold hover:bg-stori-primary-green-dark transition-colors duration-300">
+                    Stori Developers Chatbot
+                </button>
+                <div class="md:hidden">
+                    <i class="fas fa-bars text-stori-dark-blue text-xl cursor-pointer"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="py-10 px-4">
+        <div class="max-w-7xl mx-auto space-y-12">
+            <section class="bg-white rounded-lg p-8 md:p-12 lg:p-16 flex flex-col md:flex-row items-center justify-between  overflow-hidden relative">
+                <div class="md:w-1/2 text-center md:text-left z-10">
+                    <p class="text-base md:text-lg mb-2 text-stori-dark-blue">Assistant for</p>
+                    <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight text-stori-dark-blue">Technical Documentation</h1>
+                    <div class="flex items-center justify-center md:justify-start mb-6">
+                        <span class="text-6xl md:text-7xl lg:text-8xl font-extrabold  leading-none text-stori-dark-blue">AI</span>
+                        <span class="text-6xl md:text-7xl lg:text-8xl font-extrabold  leading-none text-stori-green">Docs</span>
+                    </div>
+                    <p class="text-base md:text-lg mb-8 max-w-lg mx-auto md:mx-0 text-stori-gray">
+                        This is an intelligent chatbot assistant designed to help you navigate and understand Stori's technical documentation.
+                        It uses an advanced language model (LLM) with a RAG (Retrieval-Augmented Generation) architecture to answer your questions based on a specific set of documents from our knowledge base.
+                    </p>
+                </div>
+                <div class="md:w-1/2 flex justify-center md:justify-end mt-8 md:mt-0 relative z-0">
+                    <img src="https://www.storicard.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fphone.86df9085.webp&w=640&q=75" alt="Stori App Screenshot Placeholder" class="max-w-xs md:max-w-sm lg:max-w-md w-full h-auto object-contain">
+                </div>
+            </section>
+
+
+            <section>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="p-2">
+                        <iframe
+                            id="chatbot-iframe"
+                            src="http://localhost:7862?__theme=dark"
+                            width="100%"
+                            height="1300px"
+                            frameborder="0"
+                            scrolling="no"
+                            style="border-radius: 8px;"
+                        ></iframe>
+                    </div>
+                </div>
+            </section>
+
+            <section class="text-center">
+                <h2 class="text-3xl font-bold text-stori-dark-blue mb-8">Our Knowledge Sources</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    <div class="bg-white p-8 rounded-lg shadow-md flex flex-col items-center text-center">
+                        <img src="https://www.storicard.com/_next/image?url=%2Fimages%2Fstori-cuentamas%2Fdesktop%2Fphone_hand.webp&w=256&q=75" alt="Internal Documentation Icon" class="w-24 h-24 mb-4">
+                        <h3 class="text-2xl font-semibold text-stori-dark-blue mb-2">Internal Documentation</h3>
+                        <p class="text-stori-gray mb-6">Access detailed guides and references.</p>
+                        <ul class="text-left space-y-3 w-full">
+                            <li class="flex items-center text-stori-dark-blue">
+                                <i class="fas fa-check-circle text-stori-primary-green-dark mr-2 text-sm"></i>
+                                <span class="text-sm">Integration Guides</span>
+                            </li>
+                            <li class="flex items-center text-stori-dark-blue">
+                                <i class="fas fa-check-circle text-stori-primary-green-dark mr-2 text-sm"></i>
+                                <span class="text-sm">API Specifications</span>
+                            </li>
+                            <li class="flex items-center text-stori-dark-blue">
+                                <i class="fas fa-check-circle text-stori-primary-green-dark mr-2 text-sm"></i>
+                                <span class="text-sm">Common Use Cases</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-lg shadow-md flex flex-col items-center text-center">
+                        <img src="https://www.storicard.com/_next/image?url=%2Fimages%2Fstori-cuentamas%2Fdesktop%2Fsafe.webp&w=256&q=75" alt="External Resources Icon" class="w-24 h-24 mb-4">
+                        <h3 class="text-2xl font-semibold text-stori-dark-blue mb-2">External Resources</h3>
+                        <p class="text-stori-gray mb-6">Links to repositories and community forums.</p>
+                        <ul class="text-left space-y-3 w-full">
+                            <li class="flex items-center text-stori-dark-blue">
+                                <i class="fas fa-check-circle text-stori-primary-green-dark mr-2 text-sm"></i>
+                                <span class="text-sm">GitHub Repositories</span>
+                            </li>
+                            <li class="flex items-center text-stori-dark-blue">
+                                <i class="fas fa-check-circle text-stori-primary-green-dark mr-2 text-sm"></i>
+                                <span class="text-sm">Frequently Asked Questions (FAQ)</span>
+                            </li>
+                            <li class="flex items-center text-stori-dark-blue">
+                                <i class="fas fa-check-circle text-stori-primary-green-dark mr-2 text-sm"></i>
+                                <span class="text-sm">Tutorials and Examples</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const accordionHeader = document.querySelector('#rag-sources-accordion .accordion-header');
+            const accordionContent = document.querySelector('#rag-sources-accordion .accordion-content');
+
+            accordionHeader.addEventListener('click', () => {
+                accordionHeader.classList.toggle('active');
+                accordionContent.classList.toggle('active');
+                if (accordionContent.classList.contains('active')) {
+                    accordionContent.style.maxHeight = accordionContent.scrollHeight + "px";
+                } else {
+                    accordionContent.style.maxHeight = "0px";
+                }
+            });
+
+             // Set initial state for accordion based on active class
+            if (accordionContent.classList.contains('active')) {
+                accordionContent.style.maxHeight = accordionContent.scrollHeight + "px";
+            }
+
+            // Resize iframe to fit content
+            const iframe = document.getElementById('chatbot-iframe');
+
+            const resizeIframe = () => {
+                // This is a simplified approach. For a robust cross-origin solution,
+                // the Gradio app would need to post its height via postMessage.
+                // This will likely not work perfectly due to security restrictions.
+                try {
+                    const iframeBody = iframe.contentWindow.document.body;
+                    if (iframeBody) {
+                       const height = iframeBody.scrollHeight;
+                       iframe.style.height = height + 'px';
+                    }
+                } catch (e) {
+                    console.warn("Could not resize iframe due to cross-origin restrictions.", e);
+                }
+            };
+
+            iframe.onload = () => {
+                 // Initial resize
+                 resizeIframe();
+
+                 // Attempt to resize periodically or on events inside iframe
+                 // This is still limited by cross-origin policies.
+                 const observer = new MutationObserver(resizeIframe);
+                 try {
+                    observer.observe(iframe.contentWindow.document.body, {
+                        childList: true,
+                        subtree: true,
+                        attributes: true
+                    });
+                 } catch(e) {
+                    console.warn("Could not observe iframe content for resizing.", e);
+                 }
+            };
+        });
+    </script>
+</body>
+</html>
