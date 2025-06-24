@@ -5,4 +5,6 @@ chromadb
 python-dotenv
 PyGithub
 pypdf
-langchain-google-genai 
+langchain-google-genai
+beautifulsoup4
+markdown 

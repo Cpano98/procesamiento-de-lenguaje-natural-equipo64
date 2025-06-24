@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Stori Developers Chatbot - Technical Documentation Assistant
+  </title>
+  <!-- Stori Design System -->
+  <link href="./assets/css/stori-style.css" rel="stylesheet" type="text/css"/>
+  <!-- Vendor CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+  <link href="./assets/images/favicon.png" rel="icon"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <header class="stori-header">
+   <a class="logo" href="#" title="Stori Docs">
+    <img alt="Stori Logo" src="https://www.storicard.com/_next/static/media/storis_savvi_color.7e286ddd.svg"/>
+   </a>
+   <nav>
+    <div class="dropdown">
+     <button aria-expanded="false" class="stori-btn dropdown-toggle" data-bs-toggle="dropdown" type="button">
+      Latest Docs
+     </button>
+     <ul class="dropdown-menu">
+      <!-- Populated by generate_docs.py -->
+     </ul>
+    </div>
+   </nav>
+  </header>
+  <main>
+   <section class="page-section text-center" style="padding-top: 4rem; padding-bottom: 2rem;">
+    <div class="container">
+     <h1 style="font-size: 3.5rem;">
+      Technical Documentation Assistant
+     </h1>
+     <p style="max-width: 600px; margin: 0 auto 2rem auto; font-size: 1.1rem;">
+      An intelligent chatbot to help you navigate Stori's technical runbooks and documentation.
+     </p>
+     <img alt="Stori App" src="https://www.storicard.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fphone.86df9085.webp&amp;w=640&amp;q=75" style="max-width: 350px; margin-top: 1rem;"/>
+    </div>
+   </section>
+   <section class="page-section" id="chatbot-section" style="padding-top: 2rem;">
+    <div class="container">
+     <div class="stori-card">
+      <h2>
+       Interactive AI Assistant
+      </h2>
+      <p>
+       Ask questions about our technical documentation and get instant, accurate responses. The assistant is trained on our internal knowledge base to provide relevant answers.
+      </p>
+      <div style="border-radius: 12px; overflow: hidden; margin-top: 1.5rem; border: 1px solid var(--stori-border-gray);">
+       <iframe frameborder="0" height="1000px" id="chatbot-iframe" scrolling="no" src="http://localhost:7862?__theme=dark" title="Stori Documentation AI Assistant" width="100%">
+       </iframe>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="page-section" id="knowledge-sources">
+    <div class="container">
+     <h2 class="text-center">
+      Our Knowledge Sources
+     </h2>
+     <div class="stori-card" id="documentation-versions">
+      <div class="space-y-4 w-full text-left">
+       <div class="p-4 border rounded-lg bg-gray-50">
+        <h3 class="text-md font-semibold text-stori-dark-blue">
+         June 23, 2025 - 11:52:04
+        </h3>
+        <ul class="mt-2 list-disc list-inside pl-2">
+         <li>
+          <a class="text-stori-green hover:underline" href="./20250623115204/finclip-miniprogram-boilerplate.html">
+           Finclip Miniprogram Boilerplate
+          </a>
+         </li>
+        </ul>
+       </div>
+       <div class="p-4 border rounded-lg bg-gray-50">
+        <h3 class="text-md font-semibold text-stori-dark-blue">
+         June 23, 2025 - 10:33:59
+        </h3>
+        <ul class="mt-2 list-disc list-inside pl-2">
+         <li>
+          <a class="text-stori-green hover:underline" href="./20250623103359/finclip-miniprogram-boilerplate.html">
+           Finclip Miniprogram Boilerplate
+          </a>
+         </li>
+        </ul>
+       </div>
+       <div class="p-4 border rounded-lg bg-gray-50">
+        <h3 class="text-md font-semibold text-stori-dark-blue">
+         June 23, 2025 - 09:53:42
+        </h3>
+        <ul class="mt-2 list-disc list-inside pl-2">
+         <li>
+          <a class="text-stori-green hover:underline" href="./20250623095342/deposits-secured-card.html">
+           Deposits Secured Card
+          </a>
+         </li>
+         <li>
+          <a class="text-stori-green hover:underline" href="./20250623095342/finclip-miniprogram-boilerplate.html">
+           Finclip Miniprogram Boilerplate
+          </a>
+         </li>
+         <li>
+          <a class="text-stori-green hover:underline" href="./20250623095342/hyperlane-tooling.html">
+           Hyperlane Tooling
+          </a>
+         </li>
+        </ul>
+       </div>
+       <div class="p-4 border rounded-lg bg-gray-50">
+        <h3 class="text-md font-semibold text-stori-dark-blue">
+         June 23, 2025 - 00:43:00
+        </h3>
+        <ul class="mt-2 list-disc list-inside pl-2">
+         <li>
+          <a class="text-stori-green hover:underline" href="./20250623004300/deposits-secured-card.html">
+           Deposits Secured Card
+          </a>
+         </li>
+         <li>
+          <a class="text-stori-green hover:underline" href="./20250623004300/finclip-miniprogram-boilerplate.html">
+           Finclip Miniprogram Boilerplate
+          </a>
+         </li>
+         <li>
+          <a class="text-stori-green hover:underline" href="./20250623004300/hyperlane-tooling.html">
+           Hyperlane Tooling
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="page-section" id="project-overview" style="background-color: #fff;">
+    <div class="container">
+     <h2 class="text-center">
+      About This Project
+     </h2>
+     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 3rem;">
+      <div>
+       <h3>
+        How to Use This Site
+       </h3>
+       <p>
+        This documentation is generated automatically from our internal source code and runbooks. You can explore it in two ways:
+       </p>
+       <ul style="padding-left: 1.5rem; color: var(--stori-gray);">
+        <li>
+         <strong>
+          Browse the Docs:
+         </strong>
+         Use the "Latest Docs" dropdown in the header or the version lists below to open a documentation page.
+        </li>
+        <li>
+         <strong>
+          Ask the Chatbot:
+         </strong>
+         For specific questions, use the chatbot above.
+        </li>
+       </ul>
+      </div>
+      <div>
+       <h3>
+        Sitemap
+       </h3>
+       <p>
+        A complete list of all generated documentation pages for quick access.
+       </p>
+       <ul id="sitemap-list" style="padding-left: 1.5rem; list-style: none;">
+        <li>
+         <a class="text-stori-green hover:underline" href="./20250623095342/deposits-secured-card.html">
+          Deposits Secured Card
+         </a>
+         <span class="text-stori-gray text-sm">
+          (2025-06-23)
+         </span>
+        </li>
+        <li>
+         <a class="text-stori-green hover:underline" href="./20250623004300/deposits-secured-card.html">
+          Deposits Secured Card
+         </a>
+         <span class="text-stori-gray text-sm">
+          (2025-06-23)
+         </span>
+        </li>
+        <li>
+         <a class="text-stori-green hover:underline" href="./20250623115204/finclip-miniprogram-boilerplate.html">
+          Finclip Miniprogram Boilerplate
+         </a>
+         <span class="text-stori-gray text-sm">
+          (2025-06-23)
+         </span>
+        </li>
+        <li>
+         <a class="text-stori-green hover:underline" href="./20250623103359/finclip-miniprogram-boilerplate.html">
+          Finclip Miniprogram Boilerplate
+         </a>
+         <span class="text-stori-gray text-sm">
+          (2025-06-23)
+         </span>
+        </li>
+        <li>
+         <a class="text-stori-green hover:underline" href="./20250623095342/finclip-miniprogram-boilerplate.html">
+          Finclip Miniprogram Boilerplate
+         </a>
+         <span class="text-stori-gray text-sm">
+          (2025-06-23)
+         </span>
+        </li>
+        <li>
+         <a class="text-stori-green hover:underline" href="./20250623004300/finclip-miniprogram-boilerplate.html">
+          Finclip Miniprogram Boilerplate
+         </a>
+         <span class="text-stori-gray text-sm">
+          (2025-06-23)
+         </span>
+        </li>
+        <li>
+         <a class="text-stori-green hover:underline" href="./20250623095342/hyperlane-tooling.html">
+          Hyperlane Tooling
+         </a>
+         <span class="text-stori-gray text-sm">
+          (2025-06-23)
+         </span>
+        </li>
+        <li>
+         <a class="text-stori-green hover:underline" href="./20250623004300/hyperlane-tooling.html">
+          Hyperlane Tooling
+         </a>
+         <span class="text-stori-gray text-sm">
+          (2025-06-23)
+         </span>
+        </li>
+       </ul>
+      </div>
+     </div>
+    </div>
+   </section>
+  </main>
+  <footer style="background-color: var(--stori-dark-blue); color: #fff; padding: 3rem 0; text-align: center;">
+   <div class="container">
+    <p style="color: #fff;">
+     © 2024 Stori. All Rights Reserved.
+    </p>
+   </div>
+  </footer>
+  <!-- Bootstrap JS for dropdown functionality -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+  </script>
+ </body>
+</html>

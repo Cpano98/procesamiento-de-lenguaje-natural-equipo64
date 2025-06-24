@@ -176,8 +176,10 @@ cython_debug/
 # Partial downloads
 cc.en.300.bin.gz.part
 
-# Project specific directories
-/chroma_db/
-/cloned_repos/
-/downloaded_runbooks/
-/pdf_docs/
+# Project specific directories and their contents
+chroma_db/
+cloned_repos/
+downloaded_runbooks/
+pdf_docs/
+# Generated documentation directories
+**/front/[0-9]*/

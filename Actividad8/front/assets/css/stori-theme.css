@@ -1,0 +1,101 @@
+/* Stori Theme for iDocs Template */
+
+/* Stori Color Palette */
+:root {
+  --stori-green: #00D180;
+  --stori-dark-blue: #002C30;
+  --stori-gray: rgba(0, 44, 48, 0.6);
+  --stori-bg-gray: #f6f8fb;
+  --primary: var(--stori-green);
+  --secondary: var(--stori-dark-blue);
+}
+
+/* General Body and Typography */
+body {
+  font-family: "Inter", sans-serif;
+  color: var(--stori-dark-blue);
+}
+
+h1, h2, h3, h4, h5, h6, .text-dark, .text-primary {
+  color: var(--stori-dark-blue) !important;
+}
+
+/* Links */
+a {
+  color: var(--stori-green);
+}
+a:hover {
+  color: #00b36e;
+}
+
+/* Header */
+#header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.primary-menu .logo img {
+    max-height: 40px; /* Or adjust as needed for Stori logo */
+}
+
+/* Sidebar Navigation */
+.idocs-navigation {
+  background-color: var(--stori-bg-gray);
+  border-right: none;
+}
+.idocs-navigation .nav-link {
+  color: var(--stori-gray);
+  font-weight: 500;
+}
+.idocs-navigation .nav-link.active,
+.idocs-navigation .nav-link:hover {
+  color: var(--stori-green);
+}
+
+.idocs-navigation .nav-item .nav-link.active:not(:first-child) {
+    border-left: 2px solid var(--stori-green);
+    padding-left: 22px;
+}
+
+
+/* Main Content */
+.idocs-content {
+    background-color: #ffffff;
+}
+
+.lead {
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+hr, .divider {
+    background-color: #e9ecef;
+}
+
+/* Code Blocks */
+pre, code {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+pre code.hljs {
+    background: #f8f9fa;
+    color: var(--stori-dark-blue);
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--stori-green);
+    border-color: var(--stori-green);
+}
+.btn-primary:hover {
+    background-color: #00b36e;
+    border-color: #00b36e;
+}
+
+/* Alerts */
+.alert-info {
+    background-color: #e6f9f2;
+    color: var(--stori-dark-blue);
+    border: 1px solid var(--stori-green);
+} 
