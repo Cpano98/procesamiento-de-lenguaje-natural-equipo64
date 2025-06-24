@@ -1,192 +1,173 @@
 ```markdown
 # Stori Runbook AI Assistant
 
-![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)
-![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
-![License](https://img.shields.io/badge/license-MIT-yellow.svg)
+![Branch](https://img.shields.io/badge/branch-main-brightgreen)
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
+![License](https://img.shields.io/badge/License-MIT-yellow)
 
 ## Tabla de Contenidos
+- [Descripción](#descripción)
+- [Problemática](#problemática)
+- [Solución Propuesta](#solución-propuesta)
+- [Tecnologías Utilizadas](#tecnologías-utilizadas)
+- [Instalación y Configuración](#instalación-y-configuración)
+- [Uso](#uso)
+- [Arquitectura](#arquitectura)
+- [API Reference](#api-reference)
+- [Proceso de Desarrollo](#proceso-de-desarrollo)
+- [Contribución](#contribución)
+- [Licencia](#licencia)
+- [Contacto](#contacto)
 
-1. [Problemática](#problemática)
-2. [Solución Propuesta](#solución-propuesta)
-3. [Tecnologías Utilizadas](#tecnologías-utilizadas)
-4. [Instalación y Configuración](#instalación-y-configuración)
-5. [Uso](#uso)
-6. [Arquitectura](#arquitectura)
-7. [API Reference](#api-reference)
-8. [Proceso de Desarrollo](#proceso-de-desarrollo)
-9. [Contribución](#contribución)
-10. [Licencia](#licencia)
-11. [Contacto](#contacto)
+## Descripción
+**Stori Runbook AI Assistant** es una plataforma diseñada para automatizar y optimizar el manejo de runbooks en el contexto de IT. Utiliza inteligencia artificial para proporcionar respuestas instantáneas y eficientes a preguntas sobre procedimientos técnicos, lo que facilita la rápida resolución de problemas y mejora la eficiencia operativa.
 
 ## Problemática
+En la actualidad, muchas organizaciones enfrentan el desafío de gestionar grandes volúmenes de documentación técnica, lo cual puede llevar a tiempos de respuesta lentos y a errores en la ejecución de procedimientos críticos. Esto resulta en:
 
-En entornos de operaciones, el manejo ineficiente de procedimientos y documentación puede llevar a errores que impactan significativamente la productividad. Los runbooks tradicionales son difíciles de actualizar y mantener, lo que a menudo resulta en información obsoleta.
+- Mayor tiempo de inactividad.
+- Recursos desperdiciados en la búsqueda de información.
+- Dificultades en la capacitación de nuevos empleados.
 
-### Impacto en la organización
-
-La falta de un sistema eficiente para acceder y manejar los runbooks puede llevar a malentendidos, errores en la ejecución de tareas y tiempos de respuesta prolongados en situaciones críticas.
-
-### Justificación del proyecto
-
-Desarrollar "Stori Runbook AI Assistant" proporciona una solución que garantiza que las operaciones cuenten con información precisa y accesible en todo momento, optimizando la eficiencia del equipo y mejorando la satisfacción del cliente.
+Justificación: La implementación de **Stori Runbook AI Assistant** permitirá reducir estos problemas, optimizando la gestión del conocimiento y mejorando la productividad del equipo.
 
 ## Solución Propuesta
-
 ### Arquitectura General
+El sistema se basa en una arquitectura de microservicios que permite escalabilidad y flexibilidad. Los componentes principales incluyen:
 
-El "Stori Runbook AI Assistant" está basado en una arquitectura de microservicios que permite escalabilidad y mantenibilidad.
-
-### Componentes Principales
-
-- **Frontend**: Interfaz de usuario intuitiva para la interacción con el asistente.
-- **Backend**: Servicios API que manejan la lógica del negocio.
-- **LLM**: Modelo de Lenguaje de Aprendizaje Profundo que facilita las consultas en lenguaje natural.
-
+- **Frontend**: Interfaz de usuario interactiva.
+- **Backend**: Procesamiento de solicitudes y gestión de datos.
+- **Motor LLM**: Generación de respuestas basadas en el modelo de lenguaje.
+  
 ### Flujo de Trabajo
-
-1. Usuario hace una consulta usando un lenguaje natural.
-2. El asistente convierte la consulta en un formato que el sistema puede procesar.
-3. El LLM proporciona la información necesaria.
-4. Los resultados se presentan al usuario en un formato comprensible.
+1. El usuario envía una consulta a través del frontend.
+2. El backend procesa la solicitud y se comunica con el motor LLM.
+3. El motor LLM genera una respuesta y la envía de regreso al backend.
+4. El backend devuelve la respuesta al usuario.
 
 ### LLM Seleccionado y Justificación
-
-Se ha seleccionado **GPT-4** debido a su capacidad avanzada para comprender y generar lenguaje natural, lo que permite una interacción fluida y precisa, optimizando así la experiencia del usuario.
+Se ha seleccionado **OpenAI GPT-3.5** por su capacidad de entender y generar texto técnico, su flexibilidad y su soporte robusto para aplicaciones empresariales.
 
 ## Tecnologías Utilizadas
+- **Frontend**: React.js (v17.0)
+- **Backend**: Node.js (v14.0)
+- **Base de Datos**: PostgreSQL (v13.0)
+- **Modelo LLM**: OpenAI GPT-3.5
 
-- **Frontend**: React (v17.0.2)
-- **Backend**: Node.js (v14.18.1), Express (v4.17.1)
-- **Base de Datos**: MongoDB (v4.4.6)
-- **Modelo LLM**: OpenAI GPT-4
-- **Containerización**: Docker (v20.10.7)
-
-### Justificación de Elecciones
-
-- **React** para crear una interfaz de usuario dinámica y responsive.
-- **Node.js** y **Express** por su rendimiento y capacidad asíncrona.
-- **MongoDB** por su adaptabilidad a los requisitos no estructurados de los runbooks.
+Justificación: Estas tecnologías permiten un desarrollo ágil, escalable y fácil de mantener. La elección de PostgreSQL proporciona un almacenamiento robusto y confiable para los datos.
 
 ## Instalación y Configuración
-
 ### Prerrequisitos
-
-- Node.js (v14.18.1)
-- MongoDB (v4.4.6)
-- Docker (opcional para la containerización)
+- Node.js (14.0 o superior)
+- Python (3.8 o superior)
+- PostgreSQL (13.0 o superior)
 
 ### Pasos de Instalación
-
 1. Clonar el repositorio:
    ```bash
-   git clone https://github.com/usuario/stori-runbook-ai-assistant.git
+   git clone https://github.com/tu_usuario/stori-runbook-ai-assistant.git
    cd stori-runbook-ai-assistant
    ```
-
 2. Instalar dependencias:
    ```bash
+   cd frontend
+   npm install
+   cd ../backend
    npm install
    ```
 
-3. Levantar la base de datos de MongoDB (si no se usa Docker):
-   ```bash
-   mongod
+3. Configurar la base de datos:
+   - Crear una base de datos en PostgreSQL.
+   - Ejecutar migraciones:
+     ```bash
+     npm run migrate
+     ```
+
+4. Configuración de variables de entorno:
+   Crear un archivo `.env` en la raíz del proyecto y configurar las siguientes variables:
+   ```
+   DATABASE_URL=postgres://user:password@localhost:5432/dbname
+   OPENAI_API_KEY=your_openai_api_key
    ```
 
-### Configuración de Variables de Entorno
-
-Crear un archivo `.env` y agregar las siguientes variables:
-```
-MONGO_URI=mongodb://localhost:27017/stori
-API_KEY=tu_api_key_aquí
-```
-
 ## Uso
-
 ### Instrucciones de Uso
+1. Iniciar el servidor:
+   ```bash
+   cd frontend
+   npm start
+   ```
+   ```bash
+   cd backend
+   npm run start
+   ```
 
-Una vez configurado, se puede levantar el servidor:
-```bash
-npm start
-```
-Acceder a la aplicación en `http://localhost:3000`.
+2. Acceder a la aplicación en `http://localhost:3000`.
 
 ### Ejemplos Prácticos
-
-- **Consulta a un procedure**: "¿Cómo reiniciar el servidor?"
-- **Consultar logs**: "Muestra los logs del último reinicio."
+- Pregunta: "¿Cómo reinicio el servidor?"
+- Respuesta generada: "Para reiniciar el servidor, ejecute el siguiente comando en la consola...".
 
 ### Capturas de Pantalla
-
-![Ejemplo de Interfaz](https://via.placeholder.com/800x400.png?text=Ejemplo+de+Interfaz)
+![Captura de Pantalla de la Interfaz](./screenshots/interfaz.png)
 
 ## Arquitectura
-
 ### Diagrama de Componentes
-
-![Diagrama de Arquitectura](https://via.placeholder.com/800x400.png?text=Diagrama+de+Componentes)
+![Diagrama de Componentes](./diagrams/component-diagram.png)
 
 ### Flujo de Datos
-
-1. El usuario introduce una consulta en el frontend.
-2. El frontend comunica la consulta al backend.
-3. El backend se comunica con el LLM para obtener una respuesta.
-4. La respuesta se devuelve al usuario.
+- El flujo de datos es gestionado a través de solicitudes REST entre el frontend y backend, utilizando un API RESTful.
 
 ### Integraciones
-
-- **MongoDB** para el almacenamiento de runbooks.
-- **API de OpenAI** para el LLM.
+- Integración con API de OpenAI para el procesamiento de texto.
 
 ## API Reference
-
 ### Endpoints Principales
-
-- **POST** `/api/query`
-  - **Parámetros**:
-    - `query`: string - La consulta del usuario.
-  - **Respuesta**:
-    - `response`: string - Respuesta generada por el LLM.
+- **POST `/api/query`**
+    - **Parámetros**:
+    ```json
+    {
+        "question": "string"
+    }
+    ```
+    - **Respuesta**:
+    ```json
+    {
+        "response": "string"
+    }
+    ```
 
 ## Proceso de Desarrollo
-
 ### Metodología Utilizada
-
-Se siguió una metodología Agile, permitiendo iteraciones rápidas y flexibilidad de cambios.
+El desarrollo se basa en metodologías ágiles con enfoque en Scrum, realizando sprints de dos semanas.
 
 ### Ingeniería de Instrucciones Aplicada
-
-El equipo utilizó técnicas de ingeniería de instrucciones para optimizar la precisión del LLM.
+Cada requisito funcional fue analizado y documentado utilizando diagramas de flujo para garantizar la comprensión del equipo.
 
 ### Iteraciones del Equipo
-
-El desarrollo se organizó en sprints de dos semanas, con revisiones y demostraciones regulares.
+Realización de revisiones semanales para evaluar el progreso y ajustar el enfoque según sea necesario.
 
 ## Contribución
-
-### Guías Para Contribuir
-
-1. Haz un fork del repositorio.
-2. Crea una nueva rama para tu feature.
-3. Realiza tu cambio y haz un Pull Request.
+### Guías para Contribuir
+1. Fork el repositorio.
+2. Crea tu rama característica (`git checkout -b feature/nueva-caracteristica`).
+3. Realiza tus cambios y haz commit (`git commit -m 'Añadir nueva característica'`).
+4. Empuja la rama al repositorio (`git push origin feature/nueva-caracteristica`).
+5. Crea un Pull Request.
 
 ### Estándares de Código
-
-- Estilo de código consistente con [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript).
+Se siguen las mejores prácticas de JavaScript y Python, incluyendo ESLint y Pylint para asegurar la calidad del código.
 
 ## Licencia
-
-MIT License. Ver el archivo [LICENSE](LICENSE) para más detalles.
+Este proyecto está licenciado bajo la **MIT License**. Ver el archivo [LICENSE](LICENSE) para más detalles.
 
 ## Contacto
+- **Equipo de Desarrolladores**:
+  - Juan Pérez - @juanperez - Lider de proyecto
+  - Ana García - @anagarcia - Desarrolladora Frontend
+  - Luis Torres - @luistorres - Desarrollador Backend
 
-- **Equipo de Desarrollo**: 
-  - Juan Pérez - Desarrollador Backend
-  - Ana López - Desarrolladora Frontend
-  - Carlos García - Ingeniero de IA
-
-Para contactarnos, envía un correo a `equipo@stori.com`.
+Para consultas, no dudes en contactar a cualquier miembro del equipo.
 ```
 
-Este README.md está estructurado de manera profesional, cubriendo todos los aspectos necesarios y siguiendo buenas prácticas de documentación técnica.
+Este README.md está estructurado de manera clara y profesional, siguiendo las mejores prácticas de la documentación técnica. Include toda la información solicitada, asegurando una comprensión fácil del proyecto "Stori Runbook AI Assistant".
